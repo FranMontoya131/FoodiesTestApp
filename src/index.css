@@ -20,3 +20,30 @@ code {
     monospace;
 }
 
+.title-big {
+  font-family: Druk Text Wide;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 60px;
+  color: #000000;
+}
+
+.text-basic {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.text-enlace {
+  font-family: Syne;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 22px;
+	color: #000000;
+	cursor: pointer;
+}
