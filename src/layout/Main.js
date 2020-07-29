@@ -8,38 +8,41 @@ import { menuHeader, menuFooter } from '../config/general';
 
 class Main extends Component {
 
-	constructor(){
-		super();
+	constructor(props){
+		super(props);
 		this.state = { 
 
 		}
 	}
 
+	componentDidMount(){
+		console.log('this.props :>> ', this.props);
+	}
+
 	render(){
+		const { children } = this.props;
+
 		return(
-			<Container fluid="lg">
-				<div>
+			<>
+				<Container>
 					<Row className="mt-3">
 						{
 							menuHeader.map((item) => (
-								<Col key={item.key} lg={2}>
+								<Col key={item.key} lg={(item.text === 'Menu') ? 1 : 2}>
 									<Link to={item.path}>
-										{
-											(item.text === 'Foodies') ? 
-												<Title>
-													{item.text}
-												</Title> : 
-												<Items>
-													{item.text}
-												</Items>
-										}
+										<span className={(item.text === 'Foodies')? 'title-one' : 'menu-items'}>{item.text}</span>
 									</Link>
 								</Col>	
 							))
 						}
 					</Row>
-				</div>
-				<div>
+				</Container>
+				<Wrapper>
+					{
+						children
+					}
+				</Wrapper>
+				<Container>
 					<Row>
 						<Col lg={6}>
 							<TitleF>Foodies</TitleF>
@@ -55,48 +58,31 @@ class Main extends Component {
 						{	
 							menuFooter.map((item) => (
 								<Col key={item.key} lg={2}>
-									<ItemsF>{item.text}</ItemsF>
+									<span className='footer-items'>{item.text}</span>
 								</Col>
 							))
 						}
 					</Row>
-				</div>
-			</Container>
+				</Container>
+			</>
 		);
 	}
 }
 
 export default Main;
 
-const Title = styled.span`
-	font-family: Druk Text Wide;
-	font-style: normal;
-	font-weight: bold;
-	font-size: 27px;
-	line-height: 27px;
-	color: var(--secondary-color);
-`;
-
-const Items = styled.span`
-	font-family: Syne;
-	font-style: normal;
-	font-weight: bold;
-	font-size: 18px;
-	line-height: 22px;
-	color: #000000;
-	cursor: pointer;
-`;
-
 const TitleF = styled.span`
 	color: #7B7B7B;
 `;
 
-const ItemsF = styled.span`
-	font-family: Roboto;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 16px;
-	line-height: 28px;
-	color: rgba(0, 0, 0, 0.4);
-	cursor: pointer;
+const Wrapper = styled.div`
+	display: flex;
+	margin-top: 5em;
+	margin
+
+	@media (max-width: 992px) {
+		/*cuando vaya cambiando el tamaño*/
+		margin-top: 5em;
+	}
+	flex-direction: column;
 `;

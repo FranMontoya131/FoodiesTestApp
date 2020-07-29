@@ -13,12 +13,12 @@ import Home from '../src/pages/home/index';
 
 const App = () => (
   <Router>
-    
+    <Layout>
       <Switch>
         <Redirect exact from='/' to='home' />
         <Route exact path='/home' component={Home} />
       </Switch>
-    
+    </Layout>
   </Router>
 )
 
