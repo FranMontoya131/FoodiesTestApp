@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import {Container, Row, Col, Tabs, Tab} from 'react-bootstrap';
 import styled from 'styled-components';
 
+//components
+import Welcome from '../../components/home/welcome';
+import About from '../../components/home/about';
+import Offices from '../../components/home/offices';
+
 class Home extends Component {
 
 	constructor(){
@@ -13,12 +18,16 @@ class Home extends Component {
 		return(
 			<>
 				{/* <div className='backgroundYellow'></div> */}
-				<section>
-
+				<section style={{marginTop: '5em'}}>
+					<Welcome />
 				</section>
 				
 				<section>
+					<About />
+				</section>
 
+				<section style={{marginTop: '2em'}}>
+					<Offices />
 				</section>
 				
 			</>

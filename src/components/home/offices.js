@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import {Container, Row, Col, Tabs, Tab} from 'react-bootstrap';
+import {Row, Col, Tabs, Tab} from 'react-bootstrap';
 import styled from 'styled-components';
+
+import TabOffices from '../others/Tabs';
 
 class Offices extends Component {
 
@@ -12,11 +14,12 @@ class Offices extends Component {
 	render() {
 		return(
 			<>
-				<Row>
-					<Col lg={6}>
-						<span>Estamos para ti</span>
-						{/* esto lo tengo que pasar a componente */}
-						
+				<Row className='justify-content-center'>
+					<Col lg={6} md={12}>
+						<Wrapper>
+							<span className='applyFontBaseBold' style={{fontSize: 40}}>Estamos para ti</span>
+						</Wrapper>
+						<TabOffices />
 					</Col>
 					<Col lg={6}>
 						<img src="/img/Rectangle.png" alt="rectangulo" style={{width: 824, height: 609}}/>
@@ -31,3 +34,11 @@ class Offices extends Component {
 		);
 	}
 }
+
+export default Offices;
+
+const Wrapper = styled.div`
+	display: flex;
+	justify-content: center; 
+	width: 100%;
+`;

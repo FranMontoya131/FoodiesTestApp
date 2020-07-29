@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-
+import { Link } from 'react-router-dom';
 import {Container, Row, Col} from 'react-bootstrap';
 import styled from 'styled-components';
+
+import { menuHeader } from '../../config/general';
 
 class Header extends Component {
 
@@ -14,13 +16,17 @@ class Header extends Component {
 
 	render(){
 		return(
-			<Container >
-				<Row className="mt-3">
-					<Col lg={3}><Title>Foodies</Title></Col>
-					<Col lg={2}><Items>Acerca de</Items></Col>
-					<Col lg={2}><Items>Restaurantes</Items></Col>
-					<Col lg={2}><Items>Menú</Items></Col>
-					<Col lg={2}><Items>Contáctanos</Items></Col>
+			<Container>
+				<Row className="mt-5">
+					{
+						menuHeader.map((item) => (
+							<Col key={item.key} lg={(item.text === 'Menu') ? 1 : 2}>
+								<Link to={item.path}>
+									<span className={(item.text === 'Foodies')? 'title-one' : 'menu-items'}>{item.text}</span>
+								</Link>
+							</Col>	
+						))
+					}
 				</Row>
 			</Container>
 		);

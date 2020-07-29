@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Container, Row, Col, Tabs, Tab} from 'react-bootstrap';
+import {Container, Row, Col, Tabs, Tab, Card, Form} from 'react-bootstrap';
 import styled from 'styled-components';
 
 class TabsComponent extends Component {
@@ -9,18 +9,98 @@ class TabsComponent extends Component {
 		this.state = {}
 	}
 
+	hola = (e) => {
+		console.log('e :>> ', e);
+	}
+
 	render() {
 		return(
-			<Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
-				<Tab eventKey="home" title="Home">
-					<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta eum repellendus veritatis ex nostrum, cum alias nobis maxime, ducimus enim dolores nesciunt veniam dolorem odio quia facilis laboriosam! Ab, odit.</p>
-				</Tab>
-				<Tab eventKey="profile" title="Profile">
-					<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta eum repellendus veritatis ex nostrum, cum alias nobis maxime, ducimus enim dolores nesciunt veniam dolorem odio quia facilis laboriosam! Ab, odit.</p>
-				</Tab>
-			</Tabs>
+			<WrapperTab>
+				<Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" onSelect={(e) => this.hola(e)}>
+					<Tab eventKey="toGo" title="Para Llevar">
+						<SearchContainer>
+							<Form>
+								<Row className='justify-content-center'>
+									<Col lg={1} className='pr-0'>
+										<img src="/img/search.svg" alt="search" style={{width: 24, height:24}}/>
+									</Col>
+									<Col lg={7}>
+										<Form.Control className='searchInput' size="sm" type="text" placeholder="Buscar nombre o dirección" />
+									</Col>
+								</Row>
+							</Form>
+						</SearchContainer>
+						<WrapperCards>
+							<Card>
+								<Card.Body>
+									d
+									<span>Sucursal San Benito</span>
+									<span>Abierto de 12:00 am - 9:00 pm calle la reforma</span>
+								</Card.Body>
+							</Card>
+							<Card>
+								<Card.Body>
+									d
+									<span>Sucursal San Benito</span>
+									<span>Abierto de 12:00 am - 9:00 pm calle la reforma</span>
+								</Card.Body>
+							</Card>
+						</WrapperCards>
+					</Tab>
+					<Tab eventKey="delivery" title="Domicilio">
+						<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta eum repellendus veritatis ex nostrum, cum alias nobis maxime, ducimus enim dolores nesciunt veniam dolorem odio quia facilis laboriosam! Ab, odit.</p>
+					</Tab>
+				</Tabs>
+			</WrapperTab>
 		);
 	}
 }
 
 export default TabsComponent;
+
+const WrapperTab = styled.div`
+	.nav-tabs {
+		/* display: flex; */
+		text-align: center;
+	}
+
+	.nav-tabs > a {
+		width: 50%;
+		font-family: Inter;
+		font-style: normal;
+		font-weight: bold;
+		color: #000000;
+		border: 1px solid #C4C4C4;
+		border-radius: 0;
+	}
+
+	.nav-item.active {
+		background: #000000;
+		color: #ffffff;
+		border: none;
+	}
+`;
+
+const WrapperCards = styled.div`
+	width: 100%;
+    display: flex;
+	justify-content: center;
+	padding-top: 0.5em;
+	flex-direction: column;
+
+	.card {
+		width: 552px;
+		height: 102px;
+		margin-bottom: 0.5em;
+	}
+`;
+
+const SearchContainer = styled.div`
+	width: 100%;
+	border: 1px solid #C4C4C4;
+	padding: 0.5em;
+
+	.searchInput {
+		border: none !important;
+	}
+`;

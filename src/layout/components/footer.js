@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-
 import {Container, Row, Col} from 'react-bootstrap';
 import styled from 'styled-components';
+
+import { menuFooter } from '../../config/general';
 
 class Footer extends Component {
 
@@ -14,33 +15,28 @@ class Footer extends Component {
 
 	render(){
 		return(
-			<Container >
-				<Row>
-					<Col>
-						<Title>Foodies</Title>
+			<>
+				<Row style={{background: 'gray'}}>
+					<Col lg={6}>
+						<span style={{ color: '#7B7B7B'}}>Foodies</span>
 					</Col>
-					<Col>
-						<img src="/img/appStore.svg" alt="appstore"/>
+					<Col lg={3}>
+						<img styled={{width: 184, height: 54}} src="/img/appStore.svg" alt="appstore"/>
 					</Col>
-					<Col>
-						<img src="/img/playStore.svg" alt="playstore"/>
-					</Col>
-				</Row>
-				<Row>
-					<Col>
-						<Items>Conoce nuestras sucursales</Items>
-					</Col>
-					<Col>
-						<Items>Acerca de</Items>
-					</Col>
-					<Col>
-						<Items>¿Qué hablan de nosotros?</Items>
-					</Col>
-					<Col>
-						<Items>Contáctanos</Items>
+					<Col lg={3}>
+						<img styled={{width: 184, height: 54}} src="/img/playStore.svg" alt="playstore"/>
 					</Col>
 				</Row>
-			</Container>
+				<Row style={{background: 'gray'}}>
+					{	
+						menuFooter.map((item) => (
+							<Col key={item.key} lg={2}>
+								<span className='footer-items'>{item.text}</span>
+							</Col>
+						))
+					}
+				</Row>
+			</>
 		);
 	}
 }

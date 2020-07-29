@@ -20,16 +20,39 @@ body {
 
 section {
   margin-top: 10em;
-  
-  @media (min-width: 992px;) {
+  /* @media (min-width: 992px) {
     margin-top: 1em;
-  }
+  } */
+}
+
+footer {
+  margin-left: 2.5em;
+  margin-right: 2.5em;
+  margin-top: 5em;
+  margin-bottom: 3em;
 }
 /* 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 } */
+
+.applyFontBase {
+  font-family: Inter;
+  font-style: normal;
+}
+
+.applyFontBaseBold {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.applyOpenSans {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+}
 
 .title-big {
   font-family: Inter;
