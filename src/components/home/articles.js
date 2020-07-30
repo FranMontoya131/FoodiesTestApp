@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import {Container, Row, Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 
-import { phrases } from "../../config/general";
-
-import Carousel from '../../components/others/carousel';
+import Carousel from '../others/Carousel';
 
 class Articles extends Component {
 
@@ -22,7 +20,11 @@ class Articles extends Component {
 				<Col lg={6}>
 					<Carousel />
 				</Col>
-				<Col lg={3} id='redRight'></Col>
+				<Col lg={3}>
+					<div id='redRight' style={{width: '100%', height: '100%'}}>
+						<div id='ketchup' style={{width: '100%', height: '100%'}}></div>
+					</div>
+				</Col>
 			</Row>
 		);
 	}

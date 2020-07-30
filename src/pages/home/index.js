@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import {Container, Row, Col, Tabs, Tab} from 'react-bootstrap';
-import styled from 'styled-components';
 
 //components
-import Welcome from '../../components/home/welcome';
-import About from '../../components/home/about';
-import Offices from '../../components/home/offices';
-import Articless from '../../components/home/articles';
+import Welcome from '../../components/home/Welcome';
+import About from '../../components/home/About';
+import Offices from '../../components/home/Offices';
+import Articless from '../../components/home/Articles';
+import Contact from '../../components/home/Contact';
 
 class Home extends Component {
 
@@ -32,6 +31,10 @@ class Home extends Component {
 				
 				<section style={{marginTop: '2em'}}>
 					<Articless />
+				</section>
+
+				<section>
+					<Contact />
 				</section>
 			</>
 		);

@@ -128,16 +128,21 @@ code {
 
 #redLeft {
   background-image: url("/img/subtractLeft.svg");
-  background-size: 821.24px, 990.04px;
+  background-size: 127px, 100px;
   background-repeat: no-repeat;
-  background-position-x: 35em;
-  background-position-y: -6em;
 }
 
 #redRight {
   background-image: url("/img/subtractRight.svg");
-  background-size: 821.24px, 990.04px;
+  background-size: 141px, 100%;
   background-repeat: no-repeat;
-  background-position-x: 35em;
-  background-position-y: -6em;
+  background-position-x: 11em;
+  /* background-position-y: -6em; */
+}
+
+#ketchup {
+  background-image: url("/img/ketchup.svg");
+  background-size: 141px, 100%;
+  background-repeat: no-repeat;
+  background-position-x: 12em;
 }

@@ -3,7 +3,7 @@ import {Row, Col, Tabs, Tab} from 'react-bootstrap';
 import styled from 'styled-components';
 
 import TabOffices from '../others/Tabs';
-import Map from '../others/maps';
+import Map from '../others/Maps';
 
 class Offices extends Component {
 
