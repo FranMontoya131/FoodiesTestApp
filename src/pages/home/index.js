@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import Welcome from '../../components/home/welcome';
 import About from '../../components/home/about';
 import Offices from '../../components/home/offices';
+import Articless from '../../components/home/articles';
 
 class Home extends Component {
 
@@ -17,8 +18,7 @@ class Home extends Component {
 	render(){
 		return(
 			<>
-				{/* <div className='backgroundYellow'></div> */}
-				<section style={{marginTop: '5em'}}>
+				<section style={{marginTop: '0.5em'}}>
 					<Welcome />
 				</section>
 				
@@ -30,6 +30,9 @@ class Home extends Component {
 					<Offices />
 				</section>
 				
+				<section style={{marginTop: '2em'}}>
+					<Articless />
+				</section>
 			</>
 		);
 	}

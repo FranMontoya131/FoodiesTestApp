@@ -16,7 +16,7 @@ class TabsComponent extends Component {
 	render() {
 		return(
 			<WrapperTab>
-				<Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" onSelect={(e) => this.hola(e)}>
+				<Tabs defaultActiveKey="toGo" id="uncontrolled-tab-example" onSelect={(e) => this.hola(e)}>
 					<Tab eventKey="toGo" title="Para Llevar">
 						<SearchContainer>
 							<Form>
@@ -33,16 +33,14 @@ class TabsComponent extends Component {
 						<WrapperCards>
 							<Card>
 								<Card.Body>
-									d
-									<span>Sucursal San Benito</span>
-									<span>Abierto de 12:00 am - 9:00 pm calle la reforma</span>
+									<span className='applyFontBaseBold' style={{fontSize: 20}}>Sucursal San Benito</span>
+									<span className='applyOpenSans' style={{fontSize: 16}}>Abierto de 12:00 am - 9:00 pm calle la reforma</span>
 								</Card.Body>
 							</Card>
 							<Card>
 								<Card.Body>
-									d
-									<span>Sucursal San Benito</span>
-									<span>Abierto de 12:00 am - 9:00 pm calle la reforma</span>
+									<span  className='applyFontBaseBold' style={{fontSize: 20}}>Sucursal San Benito</span>
+									<span className='applyOpenSans' style={{fontSize: 16}}>Abierto de 12:00 am - 9:00 pm calle la reforma</span>
 								</Card.Body>
 							</Card>
 						</WrapperCards>
@@ -83,15 +81,21 @@ const WrapperTab = styled.div`
 
 const WrapperCards = styled.div`
 	width: 100%;
-    display: flex;
-	justify-content: center;
+    display: flex !important;
+	justify-content: center !important;
 	padding-top: 0.5em;
-	flex-direction: column;
+	flex-wrap: wrap;
 
 	.card {
-		width: 552px;
+		width: 452px;
 		height: 102px;
 		margin-bottom: 0.5em;
+	}
+
+	.card-body {
+		display: flex;
+		justify-content: start;
+		flex-direction: column;
 	}
 `;
 

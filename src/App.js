@@ -10,6 +10,7 @@ import {
 import Layout from '../src/layout/Main';
 
 import Home from '../src/pages/home/index';
+import ErrorRoute from '../src/pages/error/notFound';
 
 const App = () => (
   <Router>
@@ -17,6 +18,7 @@ const App = () => (
       <Switch>
         <Redirect exact from='/' to='home' />
         <Route exact path='/home' component={Home} />
+        <Route path='/' component={ErrorRoute} />
       </Switch>
     </Layout>
   </Router>

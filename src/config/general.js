@@ -49,3 +49,21 @@ export const menuFooter = [
 	},
 	
 ];
+
+export const phrases = [
+	{
+		key: 1,
+		title: 'El mejor lugar para degustar en familia y amigos!',
+		message: 'Es el mejor lugar al que he venido con mi familia, la comida es rica, sirven rápido y te atienden de la mejor manera'
+	},
+	{
+		key: 2,
+		title: 'Excelente servicio!',
+		message: 'Es un excelente servicio el que brindan, lo recomiendo'
+	},
+	{
+		key: 3,
+		title: 'Bonita experiencia con mis compañeros de trabajo!',
+		message: 'Muy rico el sabor de la comida'
+	}
+];

@@ -14,7 +14,7 @@ class Welcome extends Component {
 	render() {
 		return(
 			<Container>
-				<Row className='mb-5'>
+				<Row className='mb-5 align-items-center'>
 					<Col lg={5}>
 						<Row>
 							<Col lg={12}>
@@ -30,7 +30,7 @@ class Welcome extends Component {
 						</Row>
 					</Col>
 					<Col lg={{span: 4, offset: 2}}>
-						<img style={{ width: 567, height: 300 }} src="/img/hero_hamburger.svg" alt="hamburgesa"/>
+						<img src="/img/hero_hamburger.svg" alt="hamburgesa"/>
 					</Col>
 				</Row>
 			</Container>
