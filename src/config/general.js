@@ -31,21 +31,31 @@ export const menuFooter = [
 		key: 1,
 		path: '/home',
 		text: 'Conoce nuestras sucursales',
+		col: 2
 	},
 	{
 		key: 2,
 		path: '/home',
 		text: 'Acerca de',
+		col: 2
 	},
 	{
 		key: 3,
 		path: '/home',
-		text: '¿Qué hablan de nosotros?',
+		text: 'Conoce nuestras sucursales',
+		col: 2
 	},
 	{
 		key: 4,
 		path: '/home',
+		text: '¿Qué hablan de nosotros?',
+		col: 2
+	},
+	{
+		key: 5,
+		path: '/home',
 		text: 'Contáctanos',
+		col: 2
 	},
 	
 ];
@@ -67,3 +77,30 @@ export const phrases = [
 		message: 'Muy rico el sabor de la comida'
 	}
 ];
+
+export const benefitsApp = [
+	{
+		key: 1,
+		imgSource: '/img/group1.svg',
+		altImg: 'grupo1',
+		title: 'Solicita rápido',
+		content: 'Curabitur in eleifend turpis, id vehicula odio. Donec pulvinar tellus eget magna aliquet ultricies',
+		colSize: 4
+	},
+	{
+		key: 2,
+		imgSource: '/img/group2.svg',
+		altImg: 'grupo2',
+		title: 'Fácil de Usar',
+		content: 'Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+		colSize: 4
+	},
+	{
+		key: 3,
+		imgSource: '/img/group3.svg',
+		altImg: 'grupo3',
+		title: 'Promociones especiales',
+		content: 'Curabitur in eleifend turpis, id vehicula odio. Donec pulvinar tellus eget magna aliquet ultricies.',
+		colSize: 8
+	},
+]

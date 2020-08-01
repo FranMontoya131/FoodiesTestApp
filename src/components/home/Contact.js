@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 
-import FormContact from '../others/Form';
+import FormContact from '../others/FormContact';
 class Contact extends Component {
 
 	constructor(){

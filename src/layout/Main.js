@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import {Container, Row, Col} from 'react-bootstrap';
 import styled from 'styled-components';
 
-import Head from '../layout/components/header';
-import Foot from '../layout/components/footer';
+import Head from '../layout/components/Header';
+import Foot from '../layout/components/Footer';
 
 class Main extends Component {
 

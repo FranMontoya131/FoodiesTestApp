@@ -16,21 +16,21 @@ class Footer extends Component {
 	render(){
 		return(
 			<>
-				<Row style={{background: 'gray'}}>
+				<Row>
 					<Col lg={6}>
-						<span style={{ color: '#7B7B7B'}}>Foodies</span>
+						<img src="/img/foodies.svg" alt="foodies"/>
 					</Col>
-					<Col lg={3}>
+					<Col lg={3} style={{display:'flex', justifyContent: 'flex-end', paddingRight: 0, paddingBottom: 10}}>
 						<img styled={{width: 184, height: 54}} src="/img/appStore.svg" alt="appstore"/>
 					</Col>
-					<Col lg={3}>
+					<Col lg={3} style={{paddingBottom: 10}}>
 						<img styled={{width: 184, height: 54}} src="/img/playStore.svg" alt="playstore"/>
 					</Col>
 				</Row>
-				<Row style={{background: 'gray'}}>
+				<Row style={{ borderTop: 1, borderColor: '#FFC700', borderTopStyle: 'solid'}}>
 					{	
 						menuFooter.map((item) => (
-							<Col key={item.key} lg={2}>
+							<Col key={item.key} lg={item.col} style={{display: 'flex', justifyContent: 'center', padding: 0}}>
 								<span className='footer-items'>{item.text}</span>
 							</Col>
 						))

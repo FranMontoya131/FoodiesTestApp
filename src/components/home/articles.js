@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 
-import Carousel from '../others/Carousel';
+import Carousel from '../others/CarouselStep';
 
 class Articles extends Component {
 

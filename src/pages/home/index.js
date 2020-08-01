@@ -6,6 +6,7 @@ import About from '../../components/home/About';
 import Offices from '../../components/home/Offices';
 import Articless from '../../components/home/Articles';
 import Contact from '../../components/home/Contact';
+import Mockup from '../../components/home/Mockup';
 
 class Home extends Component {
 
@@ -35,6 +36,10 @@ class Home extends Component {
 
 				<section>
 					<Contact />
+				</section>
+
+				<section style={{marginTop: '1em'}}>
+					<Mockup />
 				</section>
 			</>
 		);

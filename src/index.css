@@ -60,6 +60,13 @@ code {
   font-weight: normal;
 }
 
+.applyRobotoNormal {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 26px;
+}
+
 .title-big {
   font-family: Inter;
   font-style: normal;
@@ -102,7 +109,7 @@ code {
   font-family: Roboto;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 16px;
+	font-size: 13px;
 	line-height: 28px;
 	color: rgba(0, 0, 0, 0.4);
 	cursor: pointer;
@@ -145,4 +152,12 @@ code {
   background-size: 141px, 100%;
   background-repeat: no-repeat;
   background-position-x: 12em;
+}
+
+#phone {
+  background-image: url("/img/phone.svg");
+}
+
+.rotateDiv{
+  transform: rotate(-0.64deg);
 }
