@@ -115,22 +115,9 @@ code {
 	cursor: pointer;
 }
 
-.people-img {
-  display: flex;
-
-}
-
 .people-img > img {
 	position: relative;
 	left: -10em;
-}
-
-.people-img > span {
-  font-family: Druk Text Wide;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 30px;
-  width: 15em;
 }
 
 #redLeft {
@@ -160,4 +147,12 @@ code {
 
 .rotateDiv{
   transform: rotate(-0.64deg);
+}
+
+.navbar-toggler {
+  border: none !important;
+}
+
+.navbar-toggler > button:focus {
+  outline: none !important;
 }

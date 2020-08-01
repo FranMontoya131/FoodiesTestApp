@@ -15,7 +15,7 @@ class Welcome extends Component {
 		return(
 			<Container>
 				<Row className='mb-5 align-items-center'>
-					<Col lg={5}>
+					<Col sm={12} md={7} lg={5}>
 						<Row>
 							<Col lg={12}>
 								<span className='title-big'>Un nuevo sabor esta en la ciudad</span>
@@ -29,8 +29,10 @@ class Welcome extends Component {
 							</Col>
 						</Row>
 					</Col>
-					<Col lg={{span: 4, offset: 2}}>
-						<img src="/img/hero_hamburger.svg" alt="hamburgesa"/>
+					<Col sm={12} md={5} lg={{span: 4, offset: 1}}>
+						<Wrapper>
+							<img className='hamburger' src="/img/hero_hamburger.svg" alt="hamburgesa"/>
+						</Wrapper>
 					</Col>
 				</Row>
 			</Container>
@@ -39,3 +41,25 @@ class Welcome extends Component {
 }
 
 export default Welcome;
+
+const Wrapper = styled.div`
+	width: 100%;
+
+	@media (max-width: 992px) {
+		.hamburger {
+			width: 312.93px;
+		}
+	}
+
+	/* @media (min-width: 768px) {
+		.hamburger {
+			width: 312.93px;
+		}
+	} */
+
+	@media (max-width: 600px) {
+		.hamburger {
+			display: none;
+		}
+	}
+`;

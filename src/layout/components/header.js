@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import {Container, Row, Col} from 'react-bootstrap';
 import styled from 'styled-components';
 
 import { menuHeader } from '../../config/general';
+
+import NavBarPrimary from '../../components/others/NavBarPrimary';
 
 class Header extends Component {
 
@@ -16,8 +17,9 @@ class Header extends Component {
 
 	render(){
 		return(
+			<Wrapper>
 			<Container>
-				<Row className="mt-5">
+				{/* <Row className="mt-5 headerLg">
 					{
 						menuHeader.map((item) => (
 							<Col key={item.key} lg={(item.text === 'Menu') ? 1 : 2}>
@@ -27,28 +29,21 @@ class Header extends Component {
 							</Col>	
 						))
 					}
-				</Row>
+				</Row> */}
+				<NavBarPrimary optionsNavbar={menuHeader} />
 			</Container>
+			</Wrapper>
 		);
 	}
 }
 
 export default Header;
 
-const Title = styled.span`
-	font-family: Druk Text Wide;
-	font-style: normal;
-	font-weight: bold;
-	font-size: 27px;
-	line-height: 27px;
-`;
+const Wrapper = styled.div`
 
-const Items = styled.span`
-	font-family: Syne;
-	font-style: normal;
-	font-weight: bold;
-	font-size: 18px;
-	line-height: 22px;
-	color: #000000;
-	cursor: pointer;
+	@media (max-width: 992px) {
+		.headerLg {
+			display: none;
+		}
+	}
 `;

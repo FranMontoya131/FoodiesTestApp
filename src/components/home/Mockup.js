@@ -57,4 +57,9 @@ const Wrapper = styled.div`
 		background-color: #FFD600;
 		/* box-shadow: 0px 10px #FFD600; */
 	}
+
+	@media (max-width: 992px) { 
+
+		display: none;
+	}
 `;

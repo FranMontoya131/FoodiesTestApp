@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Container, Row, Col, Tabs, Tab, Card, Form} from 'react-bootstrap';
+import { Row, Col, Tabs, Tab, Card, Form} from 'react-bootstrap';
 import styled from 'styled-components';
 
 class TabsComponent extends Component {
@@ -21,28 +21,34 @@ class TabsComponent extends Component {
 						<SearchContainer>
 							<Form>
 								<Row className='justify-content-center'>
-									<Col lg={1} className='pr-0'>
+									<Col sm={1} md={1} lg={1} className='pr-0'>
 										<img src="/img/search.svg" alt="search" style={{width: 24, height:24}}/>
 									</Col>
-									<Col lg={7}>
+									<Col sm={11} md={7} lg={7}>
 										<Form.Control className='searchInput' size="sm" type="text" placeholder="Buscar nombre o dirección" />
 									</Col>
 								</Row>
 							</Form>
 						</SearchContainer>
 						<WrapperCards>
-							<Card>
-								<Card.Body>
-									<span className='applyFontBaseBold' style={{fontSize: 20}}>Sucursal San Benito</span>
-									<span className='applyOpenSans' style={{fontSize: 16}}>Abierto de 12:00 am - 9:00 pm calle la reforma</span>
-								</Card.Body>
-							</Card>
-							<Card>
-								<Card.Body>
-									<span  className='applyFontBaseBold' style={{fontSize: 20}}>Sucursal San Benito</span>
-									<span className='applyOpenSans' style={{fontSize: 16}}>Abierto de 12:00 am - 9:00 pm calle la reforma</span>
-								</Card.Body>
-							</Card>
+							<Row>
+								<Col sm={12} md={12} lg={12}>
+									<Card>
+										<Card.Body>
+											<span className='applyFontBaseBold' style={{fontSize: 20}}>Sucursal San Benito</span>
+											<span className='applyOpenSans' style={{fontSize: 16}}>Abierto de 12:00 am - 9:00 pm calle la reforma</span>
+										</Card.Body>
+									</Card>
+								</Col>
+								<Col sm={12} md={12} lg={12}>
+									<Card>
+										<Card.Body>
+											<span className='applyFontBaseBold' style={{fontSize: 20}}>Sucursal San Benito</span>
+											<span className='applyOpenSans' style={{fontSize: 16}}>Abierto de 12:00 am - 9:00 pm calle la reforma</span>
+										</Card.Body>
+									</Card>
+								</Col>
+							</Row>
 						</WrapperCards>
 					</Tab>
 					<Tab eventKey="delivery" title="Domicilio">
@@ -80,15 +86,13 @@ const WrapperTab = styled.div`
 `;
 
 const WrapperCards = styled.div`
-	width: 100%;
+	
     display: flex !important;
 	justify-content: center !important;
-	padding-top: 0.5em;
+	padding: 0.5em 1em;
 	flex-wrap: wrap;
 
 	.card {
-		width: 452px;
-		height: 102px;
 		margin-bottom: 0.5em;
 	}
 

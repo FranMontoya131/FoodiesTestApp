@@ -11,12 +11,14 @@ class About extends Component {
 
 	render() {
 		return(
-			<Row className='align-items-center' style={{ width: '100%', margin: 0 }}>
-				<Col lg={6} style={{paddingLeft: 0, height: 447}}>
-					<img src="/img/people.svg" alt="people" style={{ width: 639.5, height: 447 }}/>
-					<img src="/img/frase-comida.svg" alt="frase" style={{ width: 311, height: 100, position: 'relative', top: '-9em', left: '17em'}}/>
+			<Row style={{margin: 0 }}>
+				<Col md={12} lg={6} className='pl-0 pr-0'>
+					<Wrapper>
+						<img className='peopleImg' src="/img/people.svg" alt="people"/>
+						<img className='fraseComida' src="/img/frase-comida.svg" alt="frase"/>
+					</Wrapper>
 				</Col>
-				<Col lg={6}>
+				<Col md={12} lg={6} className='pt-3'>
 					<Row>
 						<Col lg={12} className='mb-5 applyFontBaseBold' style={{fontSize: 22}}>
 							<span>¿Quién es Foodies?</span>
@@ -36,3 +38,24 @@ class About extends Component {
 }
 
 export default About;
+
+const Wrapper = styled.div`
+	position: relative;
+
+	.peopleImg {
+		width: 100% !important;
+	}
+
+	.fraseComida{
+		width: 70%;
+		position: absolute;
+		right: 1.5em;
+		bottom: 3em;
+	}
+
+	@media (max-width: 992px) { 
+		.fraseComida {
+			width: 50;
+		}
+	}
+`;

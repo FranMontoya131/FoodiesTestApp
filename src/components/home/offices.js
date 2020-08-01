@@ -16,13 +16,13 @@ class Offices extends Component {
 		return(
 			<>
 				<Row className='justify-content-center'>
-					<Col lg={6} md={12} className='pr-0'>
+					<Col md={12} lg={5} className='pr-0'>
 						<Wrapper>
 							<span className='applyFontBaseBold' style={{fontSize: 40}}>Estamos para ti</span>
 						</Wrapper>
 						<TabOffices />
 					</Col>
-					<Col lg={6} md={12} className='pl-0'>
+					<Col md={12} lg={7} className='pl-0 pr-0'>
 						<Map />
 					</Col>
 				</Row>
