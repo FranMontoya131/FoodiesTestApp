@@ -23,19 +23,11 @@ body {
   background-position-y: -6em;
 }
 
-
-section {
-  margin-top: 10em;
-  /* @media (min-width: 992px) {
-    margin-top: 1em;
-  } */
-}
-
 footer {
-  margin-left: 2.5em;
-  margin-right: 2.5em;
-  margin-top: 5em;
-  margin-bottom: 3em;
+  padding-left: 2.5em;
+  padding-right: 2.5em;
+  margin-top: 2em;
+  padding-bottom: 3em;
 }
 /* 
 code {
@@ -130,19 +122,17 @@ code {
   background-image: url("/img/subtractRight.svg");
   background-size: 141px, 100%;
   background-repeat: no-repeat;
-  background-position-x: 11em;
+  background-position-x: 13em;
   /* background-position-y: -6em; */
 }
 
 #ketchup {
   background-image: url("/img/ketchup.svg");
-  background-size: 141px, 100%;
+  background-size: 300px, 100%;
   background-repeat: no-repeat;
-  background-position-x: 12em;
-}
-
-#phone {
-  background-image: url("/img/phone.svg");
+  background-position-x: 3em;
+  background-position-y: -1em;
+  z-index: 100;
 }
 
 .rotateDiv{

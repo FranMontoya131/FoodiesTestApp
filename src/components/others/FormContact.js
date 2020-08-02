@@ -15,7 +15,7 @@ class FormContact extends Component {
 		}
 	}
 
-	handlerSendMessage = () => {
+	handlerSendMessage = async() => {
 		const { name, email, message } = this.state;
 
 		const body = [{
@@ -24,37 +24,35 @@ class FormContact extends Component {
 			message
 		}]
 		
-		Req('post', '/contac', '', body);
+		const data = await Req('post', 'contact', '', '', body);
+		console.log('data :>> ', data);
 	}
 
 	render(){
 		return(
 			<WrapperForm>
-				<Form>
-					<Row>
-						<Col lg={4}>
-							<Form.Label className='text-basic'>Nombre y Apellido</Form.Label>
-							<Form.Control placeholder="Jhon Doe" maxLength='191' onChange={(evt) => { this.setState({name: evt.target.value}) }} />
-							<Form.Label className='text-basic mt-3'>Correo Electrónico</Form.Label>
-							<Form.Control placeholder="j.doe@correo.com" type='email' onChange={(evt) => { this.setState({email: evt.target.value}) }}/>
-						</Col>
-						<Col lg={8}>
-							<Form.Label className='text-basic'>Mensaje</Form.Label>
-							<Form.Control as="textarea" placeholder="El día de ahora mi experiencia fue..." maxLength='255' style={{height: 132}} onChange={(evt) => { this.setState({message: evt.target.value}) }}/>
-						</Col>
-						<Col lg={{ span: 5, offset: 3 }}></Col>
-						<Col lg={4} className='mt-3 buttonEnviar'>
-							<Button className='btnSend' onClick={this.handlerSendMessage}>
-								<span className='text-basic'>Enviar Comentarios</span>
-							</Button>
-						</Col>
-						{/* <Col lg={6}>
-							<Form.Label className='text-basic'>Correo Electrónico</Form.Label>
-							<Form.Control placeholder="j.doe@correo.com" />
-						</Col> */}
-					</Row>
-				</Form>
+				<Row className='justify-content-center rowContain'>
+					{/* <Form> */}
+					<Col sm={10} md={10} lg={3} >
+						<Form.Label className='text-basic'>Nombre y Apellido</Form.Label>
+						<Form.Control placeholder="Jhon Doe" maxLength='191' onChange={(evt) => { this.setState({name: evt.target.value}) }} />
+						<Form.Label className='text-basic mt-3'>Correo Electrónico</Form.Label>
+						<Form.Control placeholder="j.doe@correo.com" type='email' onChange={(evt) => { this.setState({email: evt.target.value}) }}/>
+					</Col>
+					<Col sm={10} md={10} lg={4}>
+						<Form.Label className='text-basic'>Mensaje</Form.Label>
+						<Form.Control as="textarea" placeholder="El día de ahora mi experiencia fue..." maxLength='255' style={{height: 132}} onChange={(evt) => { this.setState({message: evt.target.value}) }}/>
+					</Col>
+					<Col sm={10} md={10} lg={7}></Col>
+					<Col sm={12} md={12} lg={4} className='mt-3 buttonEnviar'>
+						<Button className='btnSend' onClick={this.handlerSendMessage}>
+							<span className='text-basic'>Enviar Comentarios</span>
+						</Button>
+					</Col>
+					{/* </Form> */}
+				</Row>
 			</WrapperForm>
+			
 		);
 	}
 }
@@ -62,10 +60,10 @@ class FormContact extends Component {
 export default FormContact;
 
 const WrapperForm = styled.div`
+	/* position: relative; */
+	/* width: 100%; */
 	margin-top: 1em;
-	margin-bottom: 5em;
-	width: 60%;
-	height: 100%;	
+	margin-bottom: 5em;	
 
 	.form-label{
 		color: #ffffff !important;
@@ -82,11 +80,6 @@ const WrapperForm = styled.div`
 		/* height: 610px; */
 	}
 
-	.buttonEnviar {
-		display: flex;
-    	justify-content: flex-end;
-	}
-
 	.btnSend {
 		background: #FFD600;
 	}
@@ -95,5 +88,16 @@ const WrapperForm = styled.div`
 		font-size: 16px; 
 		font-weight: bold;
 		color: #000000;
+	}
+
+	@media (max-width: 992px) {
+		.rowContain {
+			padding-bottom: 10em;
+		}
+
+		.buttonEnviar {
+			display: flex;
+			justify-content: center;
+		} 
 	}
 `;

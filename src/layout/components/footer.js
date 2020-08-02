@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Container, Row, Col} from 'react-bootstrap';
+import {Row, Col} from 'react-bootstrap';
 import styled from 'styled-components';
 
 import { menuFooter } from '../../config/general';
@@ -17,15 +17,19 @@ class Footer extends Component {
 		return(
 			<>
 				<Row>
-					<Col lg={6}>
-						<img src="/img/foodies.svg" alt="foodies"/>
+					<Col sm={12} md={4} lg={6} className='titleFooter'>
+						<WrapperFoot>
+							<img src="/img/foodies.svg" alt="foodies"/>
+						</WrapperFoot>
 					</Col>
-					<Col lg={3} style={{display:'flex', justifyContent: 'flex-end', paddingRight: 0, paddingBottom: 10}}>
-						<img styled={{width: 184, height: 54}} src="/img/appStore.svg" alt="appstore"/>
+					<Col sm={12} md={8} lg={6}>
+						<WrapperStore>
+							<img styled={{width: 184, height: 54}} src="/img/appStore.svg" alt="appstore"/>
+							<img styled={{width: 184, height: 54}} src="/img/playStore.svg" alt="playstore"/>
+						</WrapperStore>
 					</Col>
-					<Col lg={3} style={{paddingBottom: 10}}>
-						<img styled={{width: 184, height: 54}} src="/img/playStore.svg" alt="playstore"/>
-					</Col>
+					{/* <Col sm={2} md={4} lg={3} style={{paddingBottom: 10}}>
+					</Col> */}
 				</Row>
 				<Row style={{ borderTop: 1, borderColor: '#FFC700', borderTopStyle: 'solid'}}>
 					{	
@@ -43,16 +47,35 @@ class Footer extends Component {
 
 export default Footer;
 
-const Title = styled.span`
-	color: #7B7B7B;
+const WrapperFoot = styled.div`
+	
+	@media (max-width: 768px) {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 1em;
+	}
 `;
 
-const Items = styled.span`
-	font-family: Roboto;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 16px;
-	line-height: 28px;
-	color: rgba(0, 0, 0, 0.4);
-	cursor: pointer;
+const WrapperStore = styled.div`
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	padding-bottom: 1em;
+
+	@media (max-width: 992px) { 
+		justify-content: flex-end;
+		padding-bottom: 10px
+	}
+
+	@media (max-width: 768px) {
+		justify-content: center;
+	}
+
+	@media (max-width: 576px) {
+		img {
+			width: 30% !important;
+			height: 30% !important;
+		}
+	}
 `;

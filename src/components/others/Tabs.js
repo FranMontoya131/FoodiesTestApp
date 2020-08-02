@@ -5,18 +5,17 @@ import styled from 'styled-components';
 class TabsComponent extends Component {
 
 	constructor(props){
-		super();
-		this.state = {}
-	}
-
-	hola = (e) => {
-		console.log('e :>> ', e);
+		super(props);
+		this.state = {
+		}
 	}
 
 	render() {
+		const { takeAway, delivery } = this.props;
+		
 		return(
 			<WrapperTab>
-				<Tabs defaultActiveKey="toGo" id="uncontrolled-tab-example" onSelect={(e) => this.hola(e)}>
+				<Tabs defaultActiveKey="toGo" id="uncontrolled-tab-example">
 					<Tab eventKey="toGo" title="Para Llevar">
 						<SearchContainer>
 							<Form>
@@ -25,34 +24,59 @@ class TabsComponent extends Component {
 										<img src="/img/search.svg" alt="search" style={{width: 24, height:24}}/>
 									</Col>
 									<Col sm={11} md={7} lg={7}>
-										<Form.Control className='searchInput' size="sm" type="text" placeholder="Buscar nombre o dirección" />
+										<Form.Control onChange={(el) => {this.props.searchValue({value:el.target.value, type:'takeaway'})}} className='searchInput' size="sm" type="text" placeholder="Buscar nombre o dirección" />
 									</Col>
 								</Row>
 							</Form>
 						</SearchContainer>
 						<WrapperCards>
 							<Row>
-								<Col sm={12} md={12} lg={12}>
-									<Card>
-										<Card.Body>
-											<span className='applyFontBaseBold' style={{fontSize: 20}}>Sucursal San Benito</span>
-											<span className='applyOpenSans' style={{fontSize: 16}}>Abierto de 12:00 am - 9:00 pm calle la reforma</span>
-										</Card.Body>
-									</Card>
-								</Col>
-								<Col sm={12} md={12} lg={12}>
-									<Card>
-										<Card.Body>
-											<span className='applyFontBaseBold' style={{fontSize: 20}}>Sucursal San Benito</span>
-											<span className='applyOpenSans' style={{fontSize: 16}}>Abierto de 12:00 am - 9:00 pm calle la reforma</span>
-										</Card.Body>
-									</Card>
-								</Col>
+								{
+									takeAway && Array.isArray(takeAway.data) && takeAway.data.map((item) => (
+										<Col key={item.id} sm={12} md={12} lg={12}>
+											<Card>
+												<Card.Body>
+													<span className='applyFontBaseBold' style={{fontSize: 20}}>{item.name}</span>
+													<span className='applyOpenSans' style={{fontSize: 16}}>Abierto de {item.opening_time} - {item.closing_time}</span>
+													<span className='applyOpenSans' style={{fontSize: 16}}>{item.address}</span>
+												</Card.Body>
+											</Card>
+										</Col>
+									))
+								}
 							</Row>
 						</WrapperCards>
 					</Tab>
 					<Tab eventKey="delivery" title="Domicilio">
-						<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta eum repellendus veritatis ex nostrum, cum alias nobis maxime, ducimus enim dolores nesciunt veniam dolorem odio quia facilis laboriosam! Ab, odit.</p>
+						<SearchContainer>
+							<Form>
+								<Row className='justify-content-center'>
+									<Col sm={1} md={1} lg={1} className='pr-0'>
+										<img src="/img/search.svg" alt="search" style={{width: 24, height:24}}/>
+									</Col>
+									<Col sm={11} md={7} lg={7}>
+										<Form.Control onChange={(el) => {this.props.searchValue({value:el.target.value, type:'delivery'})}} className='searchInput' size="sm" type="text" placeholder="Buscar nombre o dirección" />
+									</Col>
+								</Row>
+							</Form>
+						</SearchContainer>
+						<WrapperCards>
+							<Row>
+								{
+									delivery && Array.isArray(delivery.data) && delivery.data.map((item) => (
+										<Col key={item.id} sm={12} md={12} lg={12}>
+											<Card>
+												<Card.Body>
+													<span className='applyFontBaseBold' style={{fontSize: 20}}>{item.name}</span>
+													<span className='applyOpenSans' style={{fontSize: 16}}>Abierto de {item.opening_time} - {item.closing_time}</span>
+													<span className='applyOpenSans' style={{fontSize: 16}}>{item.address}</span>
+												</Card.Body>
+											</Card>
+										</Col>
+									))
+								}
+							</Row>
+						</WrapperCards>
 					</Tab>
 				</Tabs>
 			</WrapperTab>

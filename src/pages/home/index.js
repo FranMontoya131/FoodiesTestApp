@@ -18,27 +18,27 @@ class Home extends Component {
 	render(){
 		return(
 			<>
-				<section style={{marginTop: '0.5em'}}>
+				<section style={{marginTop: '0.5em', width: '100%'}}>
 					<Welcome />
 				</section>
 				
-				<section>
+				<section style={{marginTop: '10em', width: '100%'}}>
 					<About />
 				</section>
 
-				<section style={{marginTop: '2em'}}>
+				<section style={{marginTop: '2em', width: '100%'}}>
 					<Offices />
 				</section>
 				
-				<section style={{marginTop: '2em'}}>
+				<section style={{marginTop: '2em', width: '100%', padding: '1em'}}>
 					<Articless />
 				</section>
 
-				<section>
+				<section style={{marginTop: 0, backgroundColor: '#000000', width: '100%'}}>
 					<Contact />
 				</section>
 
-				<section style={{marginTop: '1em'}}>
+				<section style={{marginTop: '1em', width: '100%', padding: '1em'}}>
 					<Mockup />
 				</section>
 			</>

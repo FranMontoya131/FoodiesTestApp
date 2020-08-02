@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 
 import FormContact from '../others/FormContact';
@@ -14,8 +14,8 @@ class Contact extends Component {
 
 	render(){
 		return(
-			<>
-				<Row style={{backgroundColor: '#000000'}} className='justify-content-center'>
+			<Container>
+				<Row className='justify-content-center'>
 					<Col lg={12} style={{ marginTop: 55, textAlign: 'center'}}>
 						<span style={{color: 'white', fontSize: 36, marginBottom: 15}} className='applyFontBaseBold'>Cuentanos tu experiencia</span>
 					</Col>
@@ -23,10 +23,10 @@ class Contact extends Component {
 						<span style={{color: 'white'}} className='text-basic'>Don't miss out on our great offers & Receive deals from all our top restaurants via e-mail.</span>
 					</Col>
 				</Row>
-				<Row style={{backgroundColor: '#000000'}} className='justify-content-center'>
+				{/* <Row> */}
 					<FormContact />
-				</Row>
-			</>
+				{/* </Row> */}
+			</Container>
 		);
 	}
 }

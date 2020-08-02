@@ -19,9 +19,10 @@ class Mockup extends Component {
 		return(
 			<Wrapper>
 				<Row>
-					<Col lg={4} id='phone'>
+					<Col sm={12} md={12} lg={5} id='phone' style={{ display: 'flex', justifyContent: 'center'}}>
+						<img className='phone' src="/img/phone.svg" alt="phone" style={{width: 500, height: 500}}/>
 					</Col>
-					<Col lg={8}>
+					<Col sm={12} md={12} lg={7}>
 						<Row style={{textAlign: 'center'}}>
 							<Col lg={12}>
 								<span className='applyFontBaseBold moreInfo'>Obten más beneficios</span>
@@ -33,7 +34,7 @@ class Mockup extends Component {
 						<Row className='justify-content-center' lg={8}>
 							{
 								benefitsApp && benefitsApp.map((item) => (
-									<Col lg={item.colSize} key={item.key}>
+									<Col md={item.colSize} lg={item.colSize} key={item.key}>
 										<TargetStep values={item} />
 									</Col>
 								))
@@ -58,8 +59,18 @@ const Wrapper = styled.div`
 		/* box-shadow: 0px 10px #FFD600; */
 	}
 
-	@media (max-width: 992px) { 
+	@media (max-width: 992px) {
+		.phone {
+			width: 500px !important;
+    		height: 400px !important;
+		}
+		
+	}
 
-		display: none;
+	@media (max-width: 576px) {
+		.phone {
+			width: 300px !important;
+    		height: 300px !important;
+		}
 	}
 `;

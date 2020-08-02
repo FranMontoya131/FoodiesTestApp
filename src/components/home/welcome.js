@@ -45,6 +45,10 @@ export default Welcome;
 const Wrapper = styled.div`
 	width: 100%;
 
+	.hamburger {
+		width: 480px;
+	}
+
 	@media (max-width: 992px) {
 		.hamburger {
 			width: 312.93px;

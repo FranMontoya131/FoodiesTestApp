@@ -19,7 +19,7 @@ class TargetStep extends Component {
 					<Col lg={12} className='mb-2'>
 						<span className='applyRobotoNormal' style={{fontSize: 18}}>{title}</span>
 					</Col>
-					<Col lg={(key == 3) ? 6 : 12}>
+					<Col sm={12} md={(key == 3) ? 6 : 12} lg={(key == 3) ? 6 : 12}>
 						<span className='applyRobotoNormal' style={{fontSize: 12}}>{content}</span>
 					</Col>
 				</Row>
