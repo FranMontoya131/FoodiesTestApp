@@ -50,9 +50,9 @@ class Offices extends Component {
 			if(type == 'takeaway'){
 				const { officesTakeAway } = this.state;
 				if(officesTakeAway && Array.isArray(officesTakeAway.data)){
-					console.log('searchValue :>> ', officesTakeAway.data);
+					console.log('searchValue :>> ', searchValue);
 
-					const data = officesTakeAway.data.find(el => el.name == searchValue);
+					const data = officesTakeAway.data.filter((el) => el.name == searchValue || el.address == searchValue);
 					console.log('data :>> ', data);
 				}
 

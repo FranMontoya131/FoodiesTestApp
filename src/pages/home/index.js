@@ -26,7 +26,7 @@ class Home extends Component {
 					<About />
 				</section>
 
-				<section style={{marginTop: '2em', width: '100%'}}>
+				<section style={{marginTop: '2em', width: '100%', padding: '1em'}}>
 					<Offices />
 				</section>
 				

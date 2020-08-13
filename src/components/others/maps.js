@@ -12,7 +12,6 @@ export class MapContainer extends Component {
         	activeMarker: {},
         	selectedPlace: {},
 		}
-		console.log('process.env.REACT_APP_GOOGLE_MAP_API_KEY :>> ', process.env.REACT_APP_API_KEY);
 	}
 
     componentWillReceiveProps(prevProps) {
@@ -64,7 +63,8 @@ export class MapContainer extends Component {
                             lat: 13.695,
                             lng: -88.950
                         }}
-                        onClick={() => this.onCloseInfoWindows()}
+						onClick={() => this.onCloseInfoWindows()}
+						className='mapaComp'
                     >
 
                         {/* {listFiltered.map(e =>
@@ -90,6 +90,11 @@ export class MapContainer extends Component {
 }
 
 const Wrapper = styled.div`
+	/* @media (max-width: 992px) {
+		.mapaComp > div {
+			/* position: static !important; */
+		}
+	} */
 `
 
 export default GoogleApiWrapper({

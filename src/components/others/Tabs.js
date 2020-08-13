@@ -20,10 +20,10 @@ class TabsComponent extends Component {
 						<SearchContainer>
 							<Form>
 								<Row className='justify-content-center'>
-									<Col sm={1} md={1} lg={1} className='pr-0'>
+									<Col sm={2} md={1} lg={1} className='pr-0'>
 										<img src="/img/search.svg" alt="search" style={{width: 24, height:24}}/>
 									</Col>
-									<Col sm={11} md={7} lg={7}>
+									<Col sm={9} md={7} lg={7}>
 										<Form.Control onChange={(el) => {this.props.searchValue({value:el.target.value, type:'takeaway'})}} className='searchInput' size="sm" type="text" placeholder="Buscar nombre o dirección" />
 									</Col>
 								</Row>
